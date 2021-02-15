@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+  <link rel="stylesheet" href="./images">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="index.html"><img src="./images/logo.jpg" alt="logo" class="img-logo"></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="index.html"><i class="fa fa-archive" style="font-size:24px;color: white;"></i></a></li>
+      <li><a href="#"><i class="fa fa-tags" style="font-size:24px;color: white;"></i></a></li>
+      <li><a href="#"><i class="fa fa-gear" style="font-size:24px;color: white;"></i></a></li>
+    
+    </ul>
+    <form class="navbar-form navbar-left" action="/action_page.php">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" name="search">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</nav>
+
+<div class="container" style="width: 100%;">
+       
+    <div id="btnContainer">
+      <button class="btn1" onclick="listView()"><i class="fa fa-bars"></i> List</button> 
+      <button class="btn1 active" onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+    </div>
+    <br>
+    <center>
+    <div class="row">
+      <div class="column" style="background-color:white;">
+        <a href="alchemist.html"><img src="./images/alchemist.jpg" alt="alchemist" class="img1" >
+        <h2>The Alchemist</h2>
+        <p >Paulo Coelho</p>
+        </a>
+      </div>
+      <div class="column" style="background-color:white">
+        <a href="faultinourstars.html"><img src="./images/The_Fault_in_Our_Stars.jpg" alt="The_Fault_in_Our_Stars" class="img1">
+        <h2>The Fault In Our Stars </h2>
+        <p>John Green</p>
+      </a>
+      </div>
+    
+    <div class="column" style="background-color:white">
+        <a href="mebeforeyou.html"><img src="./images/me_before_you.jpg" alt="me_before_you" class="img1">
+        <h2>Me Before You </h2>
+        <p>Jojo Moyes</p>
+      </a>
+      </div>
+    
+
+    <div class="column" style="background-color:white">
+        <img src="./images/where_the_crawdads_sing.jpg" alt="where_the_crawdads_sing" class="img1">
+        <h2>Where the Crawdads Sing </h2>
+        <p>Delia Owens</p>
+      </div>
+      
+      <div class="column" style="background-color:white">
+        <img src="./images/harry1.jfif" alt="harry1" class="img1">
+        <h2>The Philosopher Stone </h2>
+        <p>J.K. Rowling</p>
+      </div>  
+
+    </div>
+    
+    <div class="row">
+        <div class="column" style="background-color:white">
+            <img src="./images/harry2.jfif" alt="harry2" class="img1">
+            <h2>The Chamber of Secrets </h2>
+            <p>J.K. Rowling</p>
+          </div>  
+          <div class="column" style="background-color:white">
+            <img src="./images/harry3.jpg" alt="harry3" class="img1">
+            <h2>The Prisoner Of Azkaban </h2>
+            <p>J.K. Rowling</p>
+          </div> 
+          <div class="column" style="background-color:white">
+            <img src="./images/harry4.jfif" alt="harry4" class="img1">
+            <h2>The Goblet Of Fire</h2>
+            <p>J.K. Rowling</p>
+          </div>  
+          <div class="column" style="background-color:white">
+            <img src="./images/harry5.jpg" alt="harry5" class="img1">
+            <h2>The Order Of Phenoix </h2>
+            <p>J.K. Rowling</p>
+          </div>  
+          <div class="column" style="background-color:white">
+            <img src="./images/harry6.jpg" alt="harry6" class="img1">
+            <h2>The Half Blood Prince</h2>
+            <p>J.K. Rowling</p>
+          </div>  
+          <div class="column" style="background-color:white">
+            <img src="./images/harry7.jfif" alt="harry7" class="img1">
+            <h2>The Deathly Hollows </h2>
+            <p>J.K. Rowling</p>
+          </div>   
+    </div>
+</center>
+    
+    <script>
+    // Get the elements with class="column"
+    var elements = document.getElementsByClassName("column");
+    
+    // Declare a loop variable
+    var i;
+    
+    // List View
+    function listView() {
+      for (i = 0; i < elements.length; i++) {
+        elements[i].style.width = "100%";
+        
+      }
+    }
+    
+    // Grid View
+    function gridView() {
+      for (i = 0; i < elements.length; i++) {
+        elements[i].style.width = "20%";
+      }
+    }
+    
+    /* Optional: Add active class to the current button (highlight it) */
+    var container = document.getElementById("btnContainer");
+    var btns = container.getElementsByClassName("btn1");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+    </script>
+</div>
+
+</body>
+</html>
